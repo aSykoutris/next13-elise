@@ -8,11 +8,11 @@ export default async function SignInPage() {
   const session = await getServerSession(options);
 
   if (session) {
-    redirect('/');
+    redirect('/home');
   }
 
   return (
-    <section className="container mx-auto w-[50%] justify-center">
+    <section className='container mx-auto w-[50%] justify-center'>
       <SignInForm />
     </section>
   );

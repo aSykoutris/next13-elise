@@ -10,7 +10,7 @@ export default async function Home() {
   if (!session?.user) {
     // console.log('No active session : + ', JSON.stringify(session, null, 2));
     redirect(`/${locale}/signin?callbackUrl=/selectCompany`);
-  } else {
+  } else if (session?.user?.companyId === '') {
     redirect(`/${locale}/selectCompany`);
-  }
+  } else redirect(`/${locale}/home`);
 }
