@@ -1,4 +1,4 @@
-// File: C:\Users\asykoutris\OneDrive - INFORMATION SYSTEMS IMPACT\Documents\next13-elise\src\app\[locale]\(routes)\selectCompany\page.tsx
+// File: C:\Users\gtsamadias.IMPACT-INT\VsApp\next13-elise\next13-elise\src\app\[locale]\(routes)\selectCompany\page.tsx
 import * as entry from '../../../../../../src/app/[locale]/(routes)/selectCompany/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
