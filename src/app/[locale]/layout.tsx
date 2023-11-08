@@ -17,9 +17,13 @@ type RootLayoutProps = {
   };
 };
 
-export default async function RootLayout({ children, params }: RootLayoutProps) {
+export default async function RootLayout({
+  children,
+  params,
+}: RootLayoutProps) {
   const locale = useLocale();
 
+  // * If you manually type in the url a wrong locale, redirect to 404
   if (params.locale !== locale) {
     notFound();
   }
@@ -35,15 +39,23 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+      <meta
+        name='viewport'
+        content='user-scalable=no, width=device-width, initial-scale=1.0'
+      />
 
       <body>
         <NextUIProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <AuthProvider>
-              <div id="rootWrapper" className="flex flex-col justify-between min-h-screen">
+              <div
+                id='rootWrapper'
+                className='flex flex-col justify-between min-h-screen'
+              >
                 <Navbar locale={locale} />
-                <main className="min-h-[76vh] flex justify-center flex-col">{children}</main>
+                <main className='min-h-[76vh] flex justify-center flex-col'>
+                  {children}
+                </main>
                 <Footer />
               </div>
             </AuthProvider>
