@@ -5,7 +5,7 @@ export function middlewareI18n(middleware: NextMiddleware): NextMiddleware {
   return async (request: NextRequest, event: NextFetchEvent) => {
     const i18nMiddleware = createMiddleware({
       // A list of all locales that are supported
-      locales: ['en', 'el', 'ro'],
+      locales: ['en', 'el'],
 
       // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
       defaultLocale: 'el',
