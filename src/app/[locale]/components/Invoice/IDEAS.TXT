@@ -1,0 +1,74 @@
+    const hasSearchFilter = Boolean(invoiceFilters?.searchInput);
+  const hasDateFilter = Boolean(invoiceFilters?.dateFilter);
+  
+  // const filteredItems = useMemo(() => {
+  //   let filteredUsers = [...users];
+
+  //   function isDateInRange(date: string, dateRange: string): boolean {
+  //     const [startDateStr, endDateStr] = dateRange.split(' - ');
+  //     const datePartsStart = startDateStr.split('/');
+  //     const datePartsEnd = endDateStr.split('/');
+
+  //     // Ensure date parts are in the correct order: MM/DD/YYYY
+  //     const formattedStartDateStr = `${datePartsStart[1]}/${datePartsStart[0]}/${datePartsStart[2]}`;
+  //     const formattedEndDateStr = `${datePartsEnd[1]}/${datePartsEnd[0]}/${datePartsEnd[2]}`;
+
+  //     const startDate = new Date(formattedStartDateStr);
+  //     const endDate = new Date(formattedEndDateStr);
+  //     const dateString = `${date}`;
+  //     const dateObject = new Date(dateString);
+  //     const formatedDate = formatDate(dateObject);
+  //     const checkDate = new Date(formatedDate);
+
+  //     return checkDate >= startDate && checkDate <= endDate;
+  //   }
+
+  //   if (hasSearchFilter) {
+  //     filteredUsers = filteredUsers.filter((user) =>
+  //       (user as any)[optionFilter.uid]
+  //         .toLowerCase()
+  //         .includes(searchInput.toLowerCase())
+  //     );
+  //   }
+
+  //   if (
+  //     statusFilter !== 'all' &&
+  //     Array.from(statusFilter).length !== statusOptions.length
+  //   ) {
+  //     filteredUsers = filteredUsers.filter((user) =>
+  //       Array.from(statusFilter).includes(user.Status)
+  //     );
+  //   }
+
+  //   if (hasDateFilter) {
+  //     filteredUsers = filteredUsers.filter((user) =>
+  //       isDateInRange(user?.DateFrom, dateFilter)
+  //     );
+  //   }
+
+  //   return filteredUsers;
+  // }, [
+  //   dateFilter,
+  //   searchInput,
+  //   hasDateFilter,
+  //   hasSearchFilter,
+  //   optionFilter.uid,
+  //   statusFilter,
+  // ]);
+
+  // const pages = Math.ceil(filteredItems.length / ROWS_PER_PAGE);
+
+
+    const numberSeries = (input: string): string => {
+    if (hasSpecialCharacters(input)) return input;
+    else if (input.length === 3) return `${input}-`;
+    else return input;
+  };
+
+  const hasSpecialCharacters = (value: string): boolean => {
+    // Corrected regular expression pattern for special characters
+    const specialCharsRegex = /[-,.]/; // No need to escape hyphen when it's at the beginning or end of the character class
+
+    // Use the test method to check if the value contains any special characters
+    return specialCharsRegex.test(value);
+  };
