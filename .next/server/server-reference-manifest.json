@@ -1,0 +1,41 @@
+{
+  "node": {
+    "a0e51a52afd62ee6612224abd673cad62491b70d": {
+      "workers": {
+        "app/[locale]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Casykoutris%5C%5COneDrive%20-%20INFORMATION%20SYSTEMS%20IMPACT%5C%5CDocuments%5C%5Cnext13-elise%5C%5Csrc%5C%5Capp%5C%5Capi%5C%5Ccalls%5C%5CrefreshServerToken.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=!",
+        "app/[locale]/(routes)/selectCompany/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Casykoutris%5C%5COneDrive%20-%20INFORMATION%20SYSTEMS%20IMPACT%5C%5CDocuments%5C%5Cnext13-elise%5C%5Csrc%5C%5Capp%5C%5Capi%5C%5Ccalls%5C%5CrefreshServerToken.tsx%22%2C%5B%22default%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5Casykoutris%5C%5COneDrive%20-%20INFORMATION%20SYSTEMS%20IMPACT%5C%5CDocuments%5C%5Cnext13-elise%5C%5Csrc%5C%5Capp%5C%5Capi%5C%5Ccalls%5C%5CgetUserCompanies.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=!",
+        "app/[locale]/(routes)/authentication/impersonate/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Casykoutris%5C%5COneDrive%20-%20INFORMATION%20SYSTEMS%20IMPACT%5C%5CDocuments%5C%5Cnext13-elise%5C%5Csrc%5C%5Capp%5C%5Capi%5C%5Ccalls%5C%5CrefreshServerToken.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/[locale]/page": "rsc",
+        "app/[locale]/(routes)/selectCompany/page": "rsc",
+        "app/[locale]/(routes)/authentication/impersonate/page": "rsc"
+      }
+    },
+    "9d364f9ccf4e1976559efb0a376894e5271e359d": {
+      "workers": {
+        "app/[locale]/(routes)/selectCompany/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Casykoutris%5C%5COneDrive%20-%20INFORMATION%20SYSTEMS%20IMPACT%5C%5CDocuments%5C%5Cnext13-elise%5C%5Csrc%5C%5Capp%5C%5Capi%5C%5Ccalls%5C%5CrefreshServerToken.tsx%22%2C%5B%22default%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5Casykoutris%5C%5COneDrive%20-%20INFORMATION%20SYSTEMS%20IMPACT%5C%5CDocuments%5C%5Cnext13-elise%5C%5Csrc%5C%5Capp%5C%5Capi%5C%5Ccalls%5C%5CgetUserCompanies.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/[locale]/(routes)/selectCompany/page": "rsc"
+      }
+    },
+    "413e32a444e39005816c36965b130e9f9c71a996": {
+      "workers": {
+        "app/[locale]/(routes)/selectCompany/page": "(actionBrowser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Casykoutris%5C%5COneDrive%20-%20INFORMATION%20SYSTEMS%20IMPACT%5C%5CDocuments%5C%5Cnext13-elise%5C%5Csrc%5C%5Capp%5C%5Capi%5C%5Ccalls%5C%5CgetUserCompany.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/[locale]/(routes)/selectCompany/page": "actionBrowser"
+      }
+    },
+    "85cb91849ee557c1879c3d9b7e4763167e2601b2": {
+      "workers": {
+        "app/[locale]/(routes)/authentication/impersonate/page": "(actionBrowser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Casykoutris%5C%5COneDrive%20-%20INFORMATION%20SYSTEMS%20IMPACT%5C%5CDocuments%5C%5Cnext13-elise%5C%5Csrc%5C%5Capp%5C%5Capi%5C%5Ccalls%5C%5CgetImpersonate.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/[locale]/(routes)/authentication/impersonate/page": "actionBrowser"
+      }
+    }
+  },
+  "edge": {}
+}
