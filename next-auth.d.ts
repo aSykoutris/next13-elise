@@ -3,8 +3,9 @@
 import { DefaultSession, DefaultUser } from 'next-auth';
 import { JWT, DefaultJWT } from 'next-auth/jwt';
 
+// * Extends next-auth types
 declare module 'next-auth' {
-  interface Session {
+  interface Session extends DefaultSession['user'] {
     user: {
       userName: string;
       userId: string;
@@ -15,7 +16,7 @@ declare module 'next-auth' {
       serverAccessToken: string;
       serverRefreshToken: string;
       serverAccessTokenExp: number;
-    } & DefaultSession['user'];
+    };
   }
 
   interface User extends DefaultUser {
