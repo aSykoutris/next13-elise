@@ -54,7 +54,7 @@ export const options: NextAuthOptions = {
           const newData = createUser(data);
 
           if (!newData) throw new Error('Not valid Access Token');
-
+          newData.companyId = '';
           data = newData;
 
           return data;
