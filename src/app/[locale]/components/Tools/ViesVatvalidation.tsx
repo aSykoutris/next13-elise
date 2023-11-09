@@ -1,5 +1,6 @@
 'use client';
 
+import getViesVatValidation from '@/app/api/calls/getViesVatValidation';
 import { Button, Checkbox, Input, Select, SelectItem } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 import { useState, useRef, FormEvent } from 'react';
@@ -143,17 +144,62 @@ const countries = [
 ];
 
 export default function ViesVatvalidationForm({session}:any) {
+  const serverAccessToken = session?.user?.serverAccessToken;
+
   const t = useTranslations('ViesVatvalidation');
   const tin = useRef('');
   const rememberMe = useRef(false);
+  const [selectedCountry, setSelectedCountry] = useState('EL'); // Default value is 'EL' for Greece
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
 
+  const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = e.target.value; // Extract the selected value from the event object
+    setSelectedCountry(selectedValue); // Update the selected country when it changes
+  };
+
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    setLoading(false);
+    const Vat:string= tin.current
+    const Code:string= selectedCountry
+    console.log("SELECTED_COUNTRY=>", selectedCountry)
+    console.log("SELECTED_COUNTRY=>", Vat)
     console.log('i submitted the ViesVatvalidation Form');
+    try {
+      const res = await getViesVatValidation({
+        Code,
+        Vat,
+        serverAccessToken,
+      });
+      setLoading(false);
+      console.log("RESPONSE==>",res);
+      // if (res.accessToken) {
+      //   // try {
+      //   //   const decodedToken= decodeToken(res.accessToken);
+      //   //   const newToken = {
+      //   //     ...decodedToken,
+      //   //     serverAccessToken: res?.accessToken,
+      //   //     serverRefreshToken: res?.refreshToken,
+      //   //     // serverAccessTokenExp: decodedAccessToken?.serverAccessTokenExp,
+      //   //   };
+      //   //   console.log("DECODEDDATA=>", newToken)
+
+      //   //   await updateSession(newToken)
+      //   //   router?.replace(`/selectCompany`);
+      //   // } catch {
+      //   //   console.log("TOKEN UPDATE FAILED");
+      //   // }
+      // } else {
+      //   setError("wrongCredentials");
+      //   throw new Error("wrongCredentials");
+      // }
+    } catch (error) {
+      console.log("Error");
+      setLoading(false);
+    }
   };
 
   return (
@@ -161,10 +207,12 @@ export default function ViesVatvalidationForm({session}:any) {
       <Select
         label={t('countries')}
         defaultSelectedKeys={['EL']}
+        value={selectedCountry}
         showScrollIndicators
         classNames={{
           label: 'text-black',
         }}
+        onChange={handleCountryChange}
       >
         {countries.map((country) => (
           <SelectItem key={country.id} id={country.id} value={country.value}>
@@ -177,10 +225,10 @@ export default function ViesVatvalidationForm({session}:any) {
         color='primary'
         size='lg'
         disabled={loading}
-        minLength={11}
-        maxLength={11}
+        minLength={2}
+        maxLength={13}
         label={t(`${'vatNumber'}`)}
-        placeholder='EL123456789'
+        placeholder='123456789'
         type='text'
         onChange={(e) => {
           tin.current = e.target.value;

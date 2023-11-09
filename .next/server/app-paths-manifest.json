@@ -1,5 +1,7 @@
 {
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/[locale]/(routes)/selectCompany/page": "app/[locale]/(routes)/selectCompany/page.js",
+  "/[locale]/(routes)/signout/page": "app/[locale]/(routes)/signout/page.js",
   "/[locale]/(routes)/signin/page": "app/[locale]/(routes)/signin/page.js",
-  "/[locale]/(routes)/authentication/impersonate/page": "app/[locale]/(routes)/authentication/impersonate/page.js"
+  "/[locale]/(routes)/vatvalidation/viesvatvalidation/page": "app/[locale]/(routes)/vatvalidation/viesvatvalidation/page.js"
 }
