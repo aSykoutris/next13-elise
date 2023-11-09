@@ -10,12 +10,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/(routes)/signin/page.js"
     ],
-    "/[locale]/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/[locale]/layout.css",
-      "static/chunks/app/[locale]/layout.js"
-    ],
     "/[locale]/(routes)/signin/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -26,30 +20,31 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/(routes)/selectCompany/page.js"
     ],
-    "/[locale]/(routes)/invoice/outgoing/page": [
+    "/[locale]/(routes)/invoice/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(routes)/invoice/outgoing/page.js"
+      "static/chunks/app/[locale]/(routes)/invoice/loading.js"
     ],
     "/[locale]/(routes)/selectCompany/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/(routes)/selectCompany/loading.js"
     ],
-    "/[locale]/(routes)/signout/page": [
+    "/[locale]/(routes)/invoice/outgoing/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(routes)/signout/page.js"
-    ],
-    "/[locale]/(routes)/invoice/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(routes)/invoice/loading.js"
+      "static/chunks/app/[locale]/(routes)/invoice/outgoing/page.js"
     ],
     "/[locale]/(routes)/home/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/(routes)/home/page.js"
+    ],
+    "/[locale]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/[locale]/layout.css",
+      "static/chunks/app/[locale]/layout.js"
     ]
   }
 }
