@@ -56,3 +56,9 @@ export type Impersonate={
   HaveConsent:boolean;
   serverAccessToken: string;
 }
+
+export type ViesVatValidation={
+  Code:string;
+  Vat:string;
+  serverAccessToken: string;
+}

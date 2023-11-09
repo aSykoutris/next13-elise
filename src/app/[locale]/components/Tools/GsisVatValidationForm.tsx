@@ -97,10 +97,10 @@ export default function GsisVatValidationForm({session}:any) {
           color='primary'
           size='lg'
           disabled={loading}
-          minLength={11}
-          maxLength={11}
+          minLength={9}
+          maxLength={9}
           label={t(`${'requesterVat'}`)}
-          placeholder='EL123456789'
+          placeholder='123456789'
           type='text'
           onChange={(e) => {
             rTin.current = e.target.value;
@@ -118,10 +118,10 @@ export default function GsisVatValidationForm({session}:any) {
           color='primary'
           size='lg'
           disabled={loading}
-          minLength={11}
-          maxLength={11}
+          minLength={9}
+          maxLength={9}
           label={t(`${'customerVat'}`)}
-          placeholder='EL123456789'
+          placeholder='123456789'
           type='text'
           onChange={(e) => {
             cTin.current = e.target.value;
