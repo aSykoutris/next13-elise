@@ -22,7 +22,6 @@ export default async function getViesVatValidation({
     });
 
     const data = await res.json();
-    console.log("DATA==>", data)
     // Check if the response contains an "Errors" field to detect API-level errors
     if (data.Errors) {
       // Handle API-level errors here
@@ -32,7 +31,7 @@ export default async function getViesVatValidation({
     return data;
   } catch (error) {
     console.log('############################');
-    console.error('Error in getImpersonate:', error);
+    console.error('Error in getViesVatValidation:', error);
     console.log('############################');
     return { error: `${error}` };
   }

@@ -164,12 +164,9 @@ export default function ViesVatvalidationForm({ session }: any) {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setLoading(false);
+    setLoading(true);
     const Vat: string = tin.current;
     const Code: string = selectedCountry;
-    console.log("SELECTED_COUNTRY=>", selectedCountry);
-    console.log("SELECTED_COUNTRY=>", Vat);
-    console.log("i submitted the ViesVatvalidation Form");
     try {
       const res = await getViesVatValidation({
         Code,
