@@ -1,4 +1,4 @@
-// File: C:\Users\asykoutris\OneDrive - INFORMATION SYSTEMS IMPACT\Documents\next13-elise\src\app\api\auth\[...nextauth]\route.ts
+// File: C:\Users\gtsamadias.IMPACT-INT\VsApp\next13-elise\src\app\api\auth\[...nextauth]\route.ts
 import * as entry from '../../../../../../src/app/api/auth/[...nextauth]/route.js'
 import type { NextRequest } from 'next/server.js'
 
