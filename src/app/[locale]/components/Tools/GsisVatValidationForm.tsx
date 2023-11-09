@@ -1,11 +1,15 @@
 'use client';
 
+import getGsisVatValidation from '@/app/api/calls/getGsisVatValidation';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
 import { Button, Input, Link } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 import { useState, useRef, FormEvent } from 'react';
+import InfoModal from '../Modals/InfoModal';
 
 export default function GsisVatValidationForm({session}:any) {
+  const serverAccessToken = session?.user?.serverAccessToken;
+
   const t = useTranslations('GsisVatValidation');
   const username = useRef('');
   const password = useRef('');
@@ -15,6 +19,9 @@ export default function GsisVatValidationForm({session}:any) {
   const [loading, setLoading] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [description, setDescription] = useState();
+
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
@@ -26,12 +33,43 @@ export default function GsisVatValidationForm({session}:any) {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    console.log('i submitted the GsisVatValidation Form');
+    setLoading(false);
+    const UserName:string= username.current//* Test username: WW-1557314U805
+    const Password:string= password.current//* Test password: Impact+10.2023
+    const CalledBy:string= rTin.current// * IMPACT VAT: 998774616
+    const CalledFor:string= cTin.current// * IMPACT VAT: 998774616
+    try {
+      const res = await getGsisVatValidation({
+        UserName,
+        Password,
+        CalledBy,
+        CalledFor,
+        serverAccessToken
+      });
+      console.log("DATA=>2",res) //!stand by for xml validation from Vyronas
+      setLoading(false);
+      if (res.valid) {
+        setDescription(res)
+        setOpenModal(true);
+      } else {
+        setError("invalidVat");
+        throw new Error("wrongCredentials");
+      }
+    } catch (error) {
+      console.log("Error");
+      setLoading(false);
+    }
   };
 
   return (
     <>
+    {openModal && (
+        <InfoModal
+          title={t('viesVatInfo')}
+          description={description}
+          onClose={()=>setOpenModal(false)}
+        />
+      )}
       <Link
         isExternal
         href='https://www.aade.gr/epiheiriseis/forologikes-ypiresies/mitroo/anazitisi-basikon-stoiheion-mitrooy-epiheiriseon'
@@ -45,7 +83,7 @@ export default function GsisVatValidationForm({session}:any) {
           color='primary'
           size='lg'
           disabled={loading}
-          minLength={50}
+          minLength={3}
           maxLength={50}
           label={t(`${'username'}`)}
           type='text'

@@ -62,3 +62,11 @@ export type ViesVatValidation={
   Vat:string;
   serverAccessToken: string;
 }
+
+export type GsisVatValidation={
+  UserName:string;
+  Password:string;
+  CalledBy:string;
+  CalledFor:string;
+  serverAccessToken: string;
+}
