@@ -140,6 +140,7 @@
     "vatNumber": "VAT Number",
     "button": "Validate",
     "invalidVat":"The VAT number you have entered is invalid.",
+    "viesVatInfo":"Vies Vat Information",
     "greece": "Greece",
     "belgium": "Belgium",
     "bulgaria": "Bulgaria",
