@@ -175,27 +175,16 @@ export default function ViesVatvalidationForm({session}:any) {
         serverAccessToken,
       });
       setLoading(false);
-      console.log("RESPONSE==>",res);
-      // if (res.accessToken) {
-      //   // try {
-      //   //   const decodedToken= decodeToken(res.accessToken);
-      //   //   const newToken = {
-      //   //     ...decodedToken,
-      //   //     serverAccessToken: res?.accessToken,
-      //   //     serverRefreshToken: res?.refreshToken,
-      //   //     // serverAccessTokenExp: decodedAccessToken?.serverAccessTokenExp,
-      //   //   };
-      //   //   console.log("DECODEDDATA=>", newToken)
-
-      //   //   await updateSession(newToken)
-      //   //   router?.replace(`/selectCompany`);
-      //   // } catch {
-      //   //   console.log("TOKEN UPDATE FAILED");
-      //   // }
-      // } else {
-      //   setError("wrongCredentials");
-      //   throw new Error("wrongCredentials");
-      // }
+      if (res.valid) {
+        //TODO: Show informationabout the valid VAT. Maybe in a popup Modal
+        console.log("Name:", res.name)
+        console.log("Address:", res.address)
+        console.log("Country Code:", res.countryCode)
+        console.log("Vat Number:", res.vatNumber)
+      } else {
+        setError(t("invalidVat"));
+        throw new Error("wrongCredentials");
+      }
     } catch (error) {
       console.log("Error");
       setLoading(false);

@@ -139,6 +139,7 @@
     "countries": "Countries",
     "vatNumber": "VAT Number",
     "button": "Validate",
+    "invalidVat":"The VAT number you have entered is invalid.",
     "greece": "Greece",
     "belgium": "Belgium",
     "bulgaria": "Bulgaria",
