@@ -178,7 +178,9 @@
     "password": "Κωδικός",
     "requesterVat": "ΑΦΜ Αιτούντος",
     "customerVat": "ΑΦΜ Πελάτη",
-    "button": "Επαλήθευση"
+    "button": "Επαλήθευση",
+    "gsisVatInfo":"Πληροφορίες ΑΦΜ ΓΓΠΣ"
+
   },
   "IaprEmail": {
     "title": "Έλεγχος Email",

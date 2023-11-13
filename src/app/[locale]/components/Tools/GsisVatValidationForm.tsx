@@ -65,7 +65,7 @@ export default function GsisVatValidationForm({session}:any) {
     <>
     {openModal && (
         <InfoModal
-          title={t('viesVatInfo')}
+          title={t('gsisVatInfo')}
           description={description}
           onClose={()=>setOpenModal(false)}
         />

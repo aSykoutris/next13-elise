@@ -177,7 +177,8 @@
     "password": "Password",
     "requesterVat": "Requester VAT",
     "customerVat": "Customer VAT",
-    "button": "Validate"
+    "button": "Validate",
+    "gsisVatInfo":"GSIS VAT Information"
   },
   "IaprEmail": {
     "title": "Email Validity",
