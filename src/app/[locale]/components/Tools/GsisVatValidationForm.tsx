@@ -33,7 +33,7 @@ export default function GsisVatValidationForm({session}:any) {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setLoading(false);
+    setLoading(true);
     const UserName:string= username.current//* Test username: WW-1557314U805
     const Password:string= password.current//* Test password: Impact+10.2023
     const CalledBy:string= rTin.current// * IMPACT VAT: 998774616
@@ -46,13 +46,12 @@ export default function GsisVatValidationForm({session}:any) {
         CalledFor,
         serverAccessToken
       });
-      console.log("DATA=>2",res) //!stand by for xml validation from Vyronas
       setLoading(false);
       if (res.valid) {
         setDescription(res)
         setOpenModal(true);
       } else {
-        setError("invalidVat");
+        setError(t("invalidVat"));
         throw new Error("wrongCredentials");
       }
     } catch (error) {
@@ -63,6 +62,7 @@ export default function GsisVatValidationForm({session}:any) {
 
   return (
     <>
+    {/* modal for showing info, opening conditionally */}
     {openModal && (
         <InfoModal
           title={t('gsisVatInfo')}

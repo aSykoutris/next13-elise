@@ -178,12 +178,15 @@
     "requesterVat": "Requester VAT",
     "customerVat": "Customer VAT",
     "button": "Validate",
-    "gsisVatInfo":"GSIS VAT Information"
+    "gsisVatInfo":"GSIS VAT Information",
+    "invalidVat":"The VAT number you have entered is invalid."
   },
   "IaprEmail": {
     "title": "Email Validity",
     "subTitle": "Insert your customer VAT to find out the email that wants to receive notofications.",
     "vatLabel": "VAT",
-    "button": "Search"
+    "button": "Search",
+    "contactMail":"Contact e-mail for VAT number",
+    "invalidVat":"The VAT number you have entered is invalid."
   }
 }

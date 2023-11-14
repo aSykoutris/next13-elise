@@ -175,7 +175,7 @@ export default function ViesVatvalidationForm({ session }: any) {
       });
       setLoading(false);
       if (res.valid) {
-        setDescription(res)
+        setDescription(res);
         setOpenModal(true);
       } else {
         setError(t("invalidVat"));
@@ -189,11 +189,12 @@ export default function ViesVatvalidationForm({ session }: any) {
 
   return (
     <>
+      {/* modal for showing info, opening conditionally */}
       {openModal && (
         <InfoModal
-          title={t('viesVatInfo')}
+          title={t("viesVatInfo")}
           description={description}
-          onClose={()=>setOpenModal(false)}
+          onClose={() => setOpenModal(false)}
         />
       )}
       <form className="space-y-6 w-full md:w-[50%]" onSubmit={handleSubmit}>
