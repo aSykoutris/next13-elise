@@ -128,7 +128,7 @@ export default function NavbarItems({
   const renderDropdownItems = (items: NavbarItem[]) =>
     items.map((item) => (
       <DropdownItem
-        key={item?.href} //TODO: Different href for each instanse to avoid error
+        key={item?.label} // * Change href with label value. Label are by default different and no error occurs form same key value
         textValue={t(item?.label)}
         showDivider={item?.divider}
         onPress={() => item?.href}
